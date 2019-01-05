@@ -2,10 +2,10 @@
 ASP.NET Invoicing simulation. You can add invoices with diverse products to a customer.
 
 ## Getting started
-Clone [this]() repo to your local drive:
+Clone [this](https://github.com/Testosternus/b01-invoices.git) repo to your local drive:
 
 ```
-$ git clone
+$ git clone https://github.com/Testosternus/b01-invoices.git
 ```
 
 ## Built with
