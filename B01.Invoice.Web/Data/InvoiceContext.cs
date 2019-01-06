@@ -24,10 +24,17 @@ namespace B01.Invoice.Web.Data
             modelBuilder.Entity<InvoiceItem>()
                 .HasKey(it => new { it.BillId, it.ItemId });
 
+            modelBuilder.Entity<InvoiceItem>()
+                .HasOne(ii => ii.Bill)
+                .WithMany(i => i.Items)
+                .HasForeignKey(ii => ii.BillId);
+
             modelBuilder.Entity<Item>(ei =>
             {
                 ei.Property(i => i.Price).HasColumnType("decimal(5,2)");
             });
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
