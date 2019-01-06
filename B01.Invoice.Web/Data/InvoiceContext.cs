@@ -34,6 +34,13 @@ namespace B01.Invoice.Web.Data
                 ei.Property(i => i.Price).HasColumnType("decimal(5,2)");
             });
 
+
+            modelBuilder.Entity<Item>()
+                .HasOne(ii => ii.VAT)
+                .WithOne(i => i.Item)
+                .HasForeignKey<ItemVAT>(v => v.ItemFK);
+
+
             base.OnModelCreating(modelBuilder);
         }
     }

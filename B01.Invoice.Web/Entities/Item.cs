@@ -10,5 +10,7 @@ namespace B01.Invoice.Web.Entities
         public Guid Id { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public ICollection<InvoiceItem> InvoiceItems { get; set; }
+        public ItemVAT VAT { get; private set; }
     }
 }
